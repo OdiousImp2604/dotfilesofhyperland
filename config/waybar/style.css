@@ -1,0 +1,211 @@
+@import "dracula.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "JetBrainsMonoNL", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding: 3px;
+  font-weight: normal;
+  
+  
+}
+
+window#waybar {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  
+ }
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0.1rem 0.1rem;
+  margin-left: 3px;
+  margin-right: 3px;
+  background: @line;
+  color:white;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  background: rgba(0, 1, 51, 0.6);
+  color: #ffffff;
+  box-shadow: inherit;
+}
+
+#workspaces button.active {
+  background: @purple;
+  color: black;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#mode {
+  background: @line;
+  color: #ffa000;
+  /* border-bottom: 3px solid #ffffff; */
+}
+
+#window {
+  margin-left: 15px;	
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-keyboard-layout,
+#custom-weather{
+  padding: 0.4rem 0.8rem;
+  color: #ffffff;
+  margin: 0px 0;
+  background: @back;
+}
+
+#clock {
+  background-color: @line;
+  color: white;
+}
+
+#battery {
+  /*background-color: #002147;*/
+}
+
+#battery.charging {
+  /*color: #ffffff;*/
+  /*background-color: #26a65b;*/
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #2E3440;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #2E3440;
+}
+
+#cpu {
+  /*background-color: #003366;*/
+  /*color: #000000;*/
+}
+
+#memory {
+  background-color: #08457e;
+}
+
+#backlight.icon {
+  color: white;
+  font-size:12px;
+}
+
+#backlight.value {
+  min-width: 20px;
+}
+
+#network {
+  color: @orange;
+}
+
+#network.disconnected {
+  color: #ff0000;
+}
+
+#pulseaudio.icon {
+  background: @orange;
+  color: black;
+}
+
+#pulseaudio.muted.icon {
+  background-color: gray;
+  /*color: #2a5c45;*/
+}
+
+
+#temperature {
+  /*background-color: #003366;*/
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray {
+  /*font-size: 22px;*/
+ /* background-color: #000133;*/
+}
+
+#custom-launcher {
+  background-color: @line;
+  font-size: 1.15em;
+  color: white;
+  padding-left:15px;
+  padding-right:15px;
+  margin-right: 5px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#custom-unreademail {
+  background: #282a36;
+  min-width: 15px;
+}
+
+#network{
+  background: @purple;
+  color: #282a36;
+  border-top-left-radius: 15px;
+}
+
+#custom-power {
+    padding-left:15px;
+    padding-right:15px;
+    font-size:15px;
+    background: @purple;
+    color: #282a36;
+    border-bottom-right-radius: 15px;
+}
+
+#custom-cmus{
+  background: @orange;
+  color: @back;
+  padding-top:6px;
+}
+
+
+
+
